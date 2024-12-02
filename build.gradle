@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.4.0'
+    id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'com.deusto'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    // Spring Boot Starter Web para manejar las peticiones HTTP
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'com.h2database:h2'
+    // Spring Boot Starter Data JPA para manejar la persistencia
+    implementation'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // Socket.IO (opcional, solo si necesitas librerías de utilidad para sockets)
+    implementation 'org.java-websocket:Java-WebSocket:1.5.3'
+
+    // MapStruct (opcional, para mapping entre DTOs y entidades, si lo prefieres)
+    implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+}
+
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
