@@ -18,7 +18,7 @@ public class FacebookSocketServer implements Runnable {
     @Override
     public void run() {
         try (ServerSocket serverSocket = new ServerSocket(PORT)) {
-            System.out.println("Servidor de Facebook escuchando en el puerto " + PORT);
+            System.out.println("Server listening to PORT: " + PORT);
 
             while (true) {
                 try {

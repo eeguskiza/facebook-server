@@ -18,8 +18,8 @@ public class FacebookSocketClient {
 
             // Enviar acción para registrar un usuario
             out.println("REGISTER");
-            out.println("simpleuser@example.com");
-            out.println("simplepassword");
+            out.println("eeguskiza");
+            out.println("0000");
 
             // Leer respuesta del servidor
             String response = in.readLine();

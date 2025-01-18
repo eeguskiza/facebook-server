@@ -15,7 +15,7 @@ public class FacebookService {
 
     // Método para registrar un usuario
     public boolean register(String email, String password) {
-        System.out.println("Solicitud de registro recibida: email = " + email);
+        System.out.println("Registration requested: email = " + email);
         if (userRepository.existsById(email)) {
             return false; // El usuario ya existe
         }
@@ -25,7 +25,7 @@ public class FacebookService {
 
     // Método para autenticar un usuario
     public boolean authenticate(String email, String password) {
-        System.out.println("Solicitud de autenticación recibida: email = " + email);
+        System.out.println("Authentication Requested: email = " + email);
         User user = userRepository.findByEmailAndPassword(email, password);
         return user != null;
     }
